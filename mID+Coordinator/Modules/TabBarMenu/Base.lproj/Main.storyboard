@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HZU-fq-i2c">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+        <array key="Multicert tt DemiBold.ttf">
+            <string>Multicerttt-DemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Wallet Main View Controller-->
+        <scene sceneID="GyR-P9-FgB">
+            <objects>
+                <viewController storyboardIdentifier="WalletMainViewController" id="04j-e5-Z9Y" customClass="WalletMainViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fbQ-Fs-e4C">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySl-iP-aV3">
+                                <rect key="frame" x="127.66666666666669" y="408.66666666666669" width="138" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add Document"/>
+                                <connections>
+                                    <action selector="didPressAddDocument:" destination="04j-e5-Z9Y" eventType="touchUpInside" id="Vxs-Jk-eK1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nwg-nq-Hbi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ySl-iP-aV3" firstAttribute="centerY" secondItem="fbQ-Fs-e4C" secondAttribute="centerY" id="BTM-c7-bA1"/>
+                            <constraint firstItem="ySl-iP-aV3" firstAttribute="centerX" secondItem="fbQ-Fs-e4C" secondAttribute="centerX" id="UUt-FN-zTa"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWu-8k-hCe" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-473" y="-339"/>
+        </scene>
+        <!--Authentication Main View Controller-->
+        <scene sceneID="xaa-c2-FEF">
+            <objects>
+                <viewController storyboardIdentifier="AuthenticationMainViewController" id="vSv-JK-IyT" customClass="AuthenticationMainViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kuQ-fX-UzN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authentication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHJ-8f-Uvt">
+                                <rect key="frame" x="124" y="413" width="145" height="26"/>
+                                <fontDescription key="fontDescription" name="Multicerttt-DemiBold" family="Multicert tt" pointSize="20"/>
+                                <color key="textColor" red="0.1843137255" green="0.50980392159999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PV8-XW-qyr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IHJ-8f-Uvt" firstAttribute="centerY" secondItem="kuQ-fX-UzN" secondAttribute="centerY" id="4n1-Ie-Yz3"/>
+                            <constraint firstItem="IHJ-8f-Uvt" firstAttribute="centerX" secondItem="kuQ-fX-UzN" secondAttribute="centerX" id="myi-WP-fMe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MsA-ZV-I29" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="-339"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" id="BYZ-38-t0r" customClass="SignUpViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlA-f7-jcZ">
+                                <rect key="frame" x="154.66666666666666" y="408.66666666666669" width="84" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                <connections>
+                                    <action selector="didPressSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pHz-It-NT7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jlA-f7-jcZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pN5-XO-nzw"/>
+                            <constraint firstItem="jlA-f7-jcZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uig-fQ-DQR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1134" y="-339"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="BJ3-3S-CxH">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="HZU-fq-i2c" customClass="SplashViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7E9-eF-5LN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="sFX-aa-AHW">
+                                <rect key="frame" x="80.666666666666686" y="324" width="232" height="75.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="multicert ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq5-JS-Cw9">
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="51.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Multicerttt-DemiBold" family="Multicert tt" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="assinatura digital qualificada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u0a-q1-UHN">
+                                        <rect key="frame" x="8.3333333333333286" y="55.666666666666679" width="215.33333333333337" height="19.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Engineering for digital security" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEt-bM-iKM">
+                                <rect key="frame" x="46" y="720" width="301" height="26"/>
+                                <fontDescription key="fontDescription" name="Multicerttt-DemiBold" family="Multicert tt" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Tj-Oc-Pbh"/>
+                        <color key="backgroundColor" red="0.1843137255" green="0.50980392159999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Tj-Oc-Pbh" firstAttribute="bottom" secondItem="jEt-bM-iKM" secondAttribute="bottom" constant="72" id="2Ad-ib-drN"/>
+                            <constraint firstItem="jEt-bM-iKM" firstAttribute="centerX" secondItem="7E9-eF-5LN" secondAttribute="centerX" id="Dar-Oa-4f0"/>
+                            <constraint firstItem="sFX-aa-AHW" firstAttribute="top" secondItem="1Tj-Oc-Pbh" secondAttribute="top" priority="750" constant="265" id="EfE-kf-8c5"/>
+                            <constraint firstItem="jEt-bM-iKM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="sFX-aa-AHW" secondAttribute="bottom" constant="200" id="K6S-1P-bwm"/>
+                            <constraint firstItem="sFX-aa-AHW" firstAttribute="centerX" secondItem="7E9-eF-5LN" secondAttribute="centerX" id="XYc-ZO-MgU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fcg-K0-Z11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1883" y="-339"/>
+        </scene>
+        <!--Signature Main View Controller-->
+        <scene sceneID="Si4-OC-JDx">
+            <objects>
+                <viewController storyboardIdentifier="SignatureMainViewController" id="gtZ-CF-FkT" customClass="SignatureMainViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D1l-rl-dZX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fS-E4-ZLU">
+                                <rect key="frame" x="148.66666666666666" y="413" width="96" height="26"/>
+                                <fontDescription key="fontDescription" name="Multicerttt-DemiBold" family="Multicert tt" pointSize="20"/>
+                                <color key="textColor" red="0.1843137255" green="0.50980392159999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GOh-2a-8nb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3fS-E4-ZLU" firstAttribute="centerX" secondItem="D1l-rl-dZX" secondAttribute="centerX" id="Ocq-Xd-VB4"/>
+                            <constraint firstItem="3fS-E4-ZLU" firstAttribute="centerY" secondItem="D1l-rl-dZX" secondAttribute="centerY" id="amC-D3-k2G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvf-YY-mBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="926" y="-339"/>
+        </scene>
+        <!--Activity Main View Controller-->
+        <scene sceneID="2UM-bh-rNu">
+            <objects>
+                <viewController storyboardIdentifier="ActivityMainViewController" id="5XZ-Mv-1nC" customClass="ActivityMainViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YTa-qM-GVe">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9f-yI-adV">
+                                <rect key="frame" x="159.66666666666666" y="413" width="73.666666666666657" height="26"/>
+                                <fontDescription key="fontDescription" name="Multicerttt-DemiBold" family="Multicert tt" pointSize="20"/>
+                                <color key="textColor" red="0.1843137255" green="0.50980392159999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="O2n-Ir-zJ2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="X9f-yI-adV" firstAttribute="centerY" secondItem="YTa-qM-GVe" secondAttribute="centerY" id="4EI-mV-cHq"/>
+                            <constraint firstItem="X9f-yI-adV" firstAttribute="centerX" secondItem="YTa-qM-GVe" secondAttribute="centerX" id="dZY-KJ-6pk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-Ag-sKc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="-339"/>
+        </scene>
+        <!--More Main View Controller-->
+        <scene sceneID="HHC-Wc-aCk">
+            <objects>
+                <viewController storyboardIdentifier="MoreMainViewController" id="aHU-6R-Oq2" customClass="MoreMainViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gEG-Pz-G1N">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89a-RX-Ws7">
+                                <rect key="frame" x="173" y="413" width="47" height="26"/>
+                                <fontDescription key="fontDescription" name="Multicerttt-DemiBold" family="Multicert tt" pointSize="20"/>
+                                <color key="textColor" red="0.1843137255" green="0.50980392159999999" blue="0.85490196080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="h89-X3-L43"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="89a-RX-Ws7" firstAttribute="centerX" secondItem="gEG-Pz-G1N" secondAttribute="centerX" id="1we-DY-2QG"/>
+                            <constraint firstItem="89a-RX-Ws7" firstAttribute="centerY" secondItem="gEG-Pz-G1N" secondAttribute="centerY" id="5eO-Tw-Au8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WDj-Ww-XmL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2286" y="-339"/>
+        </scene>
+        <!--Add Document View Controller-->
+        <scene sceneID="XMt-lJ-ZPA">
+            <objects>
+                <viewController storyboardIdentifier="AddDocumentViewController" id="8bF-GJ-Gpq" customClass="AddDocumentViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qVx-87-5hX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fen-Qc-Hy7">
+                                <rect key="frame" x="162" y="408.66666666666669" width="69" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Finish"/>
+                                <connections>
+                                    <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="aQz-Cb-uM7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JTl-iI-dLT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fen-Qc-Hy7" firstAttribute="centerY" secondItem="qVx-87-5hX" secondAttribute="centerY" id="A5D-me-vJy"/>
+                            <constraint firstItem="fen-Qc-Hy7" firstAttribute="centerX" secondItem="qVx-87-5hX" secondAttribute="centerX" id="f0B-6c-qC5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r74-Ka-5ds" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-474" y="323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
