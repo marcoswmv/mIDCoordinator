@@ -17,10 +17,6 @@ final class SplashViewController: RootViewController {
     
     var performAction: ((SplashViewController.Action) -> Void)?
     
-    deinit {
-        print("\(self) deinit")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Make a call to checkAppState() on dedicated ViewModel/Presenter to dedicated Service/Manager

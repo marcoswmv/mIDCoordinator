@@ -24,6 +24,8 @@ final class SignUpCoordinator: RootCoordinator {
             case .didCompleteSignUp:
                 // TODO: Possible place to call .getRouterFromStep and route to where needed
                 finish(with: nil)
+            case .navigateToRegisterPhone:
+                routingDelegate?.pushCoordinator(next: OnboardingStep.registerPhone)
             }
         }
         navigationController.pushViewController(viewController, animated: true)

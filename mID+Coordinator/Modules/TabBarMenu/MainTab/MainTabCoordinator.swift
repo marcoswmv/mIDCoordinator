@@ -11,7 +11,6 @@ final class MainTabCoordinator: RootCoordinator {
     
     override var flow: CoordinatorFlow { .mainTab }
     var tabBarController: UITabBarController
-    private var step: StepProtocol?
     
     convenience init(_ navigationController: UINavigationController, step: StepProtocol?) {
         self.init(navigationController)
@@ -94,6 +93,19 @@ final class MainTabCoordinator: RootCoordinator {
 }
 
 extension MainTabCoordinator: CoordinatorRoutingDelegate {
+    func popCoordinator(_ childCoordinator: RootCoordinator) {
+        //
+    }
+    
+    func pushCoordinator(next step: any StepProtocol) {
+        guard let step = step as? WalletStep,
+              let destinationTab = MainTabPage(flow: step.flow) else {
+            return
+        }
+       
+        selectTab(.activity)
+    }
+    
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?) {
         setChildCoordinators(childCoordinators.filter({ $0.flow != childCoordinator.flow }))
         

@@ -8,5 +8,9 @@
 import UIKit
 
 class RootViewController: UIViewController, Storyboarded, Coordinated {
-    var coordinator: RootCoordinator?
+    weak var coordinator: RootCoordinator?
+    
+    deinit {
+        print("\(self) deinit")
+    }
 }

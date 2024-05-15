@@ -10,6 +10,7 @@ import UIKit
 extension AddDocumentViewController {
     enum Action {
         case finish
+        case activity
     }
 }
 
@@ -28,5 +29,9 @@ final class AddDocumentViewController: RootViewController {
     
     @IBAction func didPressFinish(_ sender: UIButton) {
         performAction?(.finish)
+    }
+    
+    @IBAction func didPressActivity(_ sender: Any) {
+        performAction?(.activity)
     }
 }

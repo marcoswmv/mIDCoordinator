@@ -23,6 +23,8 @@ final class AddDocumentCoordinator: RootCoordinator {
             switch action {
             case .finish:
                 finish(with: WalletStep.completed)
+            case .activity:
+                routingDelegate?.pushCoordinator(next: WalletStep.activity)
             }
         }
         navigationController.pushViewController(addDocumentVC, animated: true)

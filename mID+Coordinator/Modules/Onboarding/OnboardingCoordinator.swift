@@ -10,7 +10,6 @@ import UIKit
 final class OnboardingCoordinator: RootCoordinator {
 
     override var flow: CoordinatorFlow { .onboarding }
-    private var step: OnboardingStep
     
     convenience init(_ navigationController: UINavigationController, step: OnboardingStep) {
         self.init(navigationController)
@@ -18,12 +17,12 @@ final class OnboardingCoordinator: RootCoordinator {
     }
     
     required init(_ navigationController: UINavigationController) {
-        self.step = .signUp
         super.init(navigationController)
     }
     
     override func start() {
-        configureCoordinator(for: self.step)
+        navigationController.delegate = self
+        configureCoordinator(for: OnboardingStep.signUp)
     }
     
     private func configureCoordinator(for step: OnboardingStep = .completed) {
@@ -34,11 +33,13 @@ final class OnboardingCoordinator: RootCoordinator {
             coordinator = SignUpCoordinator(navigationController)
         case .completed:
             routingDelegate?.childCoordinatorDidFinish(self, with: nil)
+        case .registerPhone:
+            coordinator = RegisterPhoneCoordinator(navigationController)
         }
         
         if let coordinator {
             coordinator.routingDelegate = self
-//            setupControllerDelegates(navigationBarDelegate: self)
+            setupControllerDelegates(navigationBarDelegate: self)
             addChildCoordinator(coordinator)
             coordinator.start()
         }
@@ -46,36 +47,49 @@ final class OnboardingCoordinator: RootCoordinator {
 }
 
 extension OnboardingCoordinator: CoordinatorRoutingDelegate {
+    func pushCoordinator(next step: any StepProtocol) {
+        guard let step = step as? OnboardingStep else { return }
+        configureCoordinator(for: step)
+    }
+    
+    func popCoordinator(_ childCoordinator: RootCoordinator) {
+        popChildCoordinator(childCoordinator)
+        navigationController.popViewController(animated: true)
+    }
+    
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?) {
-        setChildCoordinators(childCoordinators.filter({ $0.flow != childCoordinator.flow }))
+        guard let step = step as? OnboardingStep else { return }
+        setChildCoordinators(childCoordinators.filter({ $0.flow != childCoordinator.flow })) // This is popping current child cordinator
         if !navigationController.viewControllers.isEmpty {
             navigationController.viewControllers.removeAll()
         }
-        configureCoordinator()
+        
+        switch step {
+        case .signUp:
+            break;
+        case .completed:
+            configureCoordinator(for: .completed)
+        case .registerPhone:
+            configureCoordinator(for: .signUp)
+        }
     }
 }
 
-//extension OnboardingCoordinator: CoordinatorNavigationBarDelegate {
-//    func didShowViewController(on navigationController: UINavigationController, viewController: UIViewController, animated: Bool) {
-//        /// Make sure the view controller is popping
-//        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
-//            return
-//        }
-//        
-//        /// Check whether our view controller array already contains that view controller.
-//        /// If it does it means we’re pushing a different view controller on top rather than popping it, so exit.
-//        if navigationController.viewControllers.contains(fromViewController) {
-//            return
-//        }
-//        
-//        /// If not then we remove the current child coordinator
-//        deallocateChildCoordinator(self, with: fromViewController)
-//    }
-//    
-//    private func deallocateChildCoordinator(_ coordinator: Coordinator, with viewController: UIViewController) {
-//        /// Condition just for example purposes. It won't work because there won't be a Back button in this View Controller's nav bar
-//        if viewController is SignUpViewController {
-//            removeChildCoordinator(coordinator)
-//        }
-//    }
-//}
+extension OnboardingCoordinator: CoordinatorNavigationBarDelegate {
+    func didShowViewController(on navigationController: UINavigationController, viewController: UIViewController, animated: Bool) {
+        /// Make sure the view controller is popping
+        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
+            return
+        }
+        
+        /// Check whether our view controller array already contains that view controller.
+        /// If it does it means we’re pushing a different view controller on top rather than popping it, so exit.
+        if navigationController.viewControllers.contains(fromViewController) {
+            return
+        }
+        
+        /// If not then we remove the current child coordinator
+        guard let fromViewControllerCoordinator = (fromViewController as? RootViewController)?.coordinator else { return }
+        removeChildCoordinator(fromViewControllerCoordinator)
+    }
+}

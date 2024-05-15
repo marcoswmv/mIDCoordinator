@@ -62,6 +62,14 @@ final class AppCoordinator: RootCoordinator {
 }
 
 extension AppCoordinator: CoordinatorRoutingDelegate {
+    func popCoordinator(_ childCoordinator: RootCoordinator) {
+        //
+    }
+    
+    func pushCoordinator(next step: any StepProtocol) {
+        //
+    }
+     
     // Splash in .app flow is a redirection point so it never calls this method.
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?) {
         setChildCoordinators(childCoordinators.filter({ $0.flow != childCoordinator.flow }))

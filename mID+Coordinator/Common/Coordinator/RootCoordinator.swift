@@ -13,6 +13,7 @@ class RootCoordinator: NSObject, CoordinatorProtocol {
     weak var navigationBarDelegate: CoordinatorNavigationBarDelegate?
     weak var tabBarDelegate: CoordinatorTabBarDelegate?
     var navigationController: UINavigationController
+    var step: StepProtocol?
     /// Getter is public and setter is private. One should use public CRUD methods below to modify property
     private(set) var childCoordinators: [RootCoordinator] = [RootCoordinator]()
     var flow: CoordinatorFlow { .app }
@@ -48,6 +49,22 @@ class RootCoordinator: NSObject, CoordinatorProtocol {
         if let index = childCoordinators.firstIndex(of: coordinator) {
             childCoordinators.remove(at: index)
         }
+    }
+    
+    @discardableResult
+    public func popChildCoordinator(_ coordinator: RootCoordinator) -> RootCoordinator? {
+//        if let index = childCoordinators.lastIndex(of: coordinator),
+//           let lastChildCoordinator = childCoordinators.last,
+//           let lastIndex = childCoordinators.lastIndex(of: lastChildCoordinator),
+//           index == lastIndex {
+//            return childCoordinators.remove(at: index)
+//        }
+        
+        if coordinator == childCoordinators.last {
+            return childCoordinators.popLast()
+        }
+        
+        return nil
     }
     
     public func setChildCoordinators(_ coordinators: [RootCoordinator]) {

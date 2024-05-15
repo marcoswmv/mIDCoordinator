@@ -31,6 +31,23 @@ enum MainTabPage: Int, CaseIterable {
         }
     }
     
+    init?(flow: CoordinatorFlow) {
+        switch flow {
+        case .wallet:
+            self = .wallet
+        case .authentication:
+            self = .authentication
+        case .signature:
+            self = .signature
+        case .activity:
+            self = .activity
+        case .more:
+            self = .more
+        default:
+            return nil
+        }
+    }
+    
     var title: String {
         switch self {
         case .wallet:

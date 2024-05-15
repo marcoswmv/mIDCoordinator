@@ -41,6 +41,8 @@ final class WalletMainCoordinator: RootCoordinator {
         case .resetApp:
             // Deallocating every coordinator (and viewControllers) up to AppCoordinator and from it show Splash
             routingDelegate?.childCoordinatorDidFinish(self, with: nil)
+        case .activity:
+            break;
         }
         
         if let coordinator {
@@ -52,6 +54,14 @@ final class WalletMainCoordinator: RootCoordinator {
 }
 
 extension WalletMainCoordinator: CoordinatorRoutingDelegate {
+    func popCoordinator(_ childCoordinator: RootCoordinator) {
+        //
+    }
+    
+    func pushCoordinator(next step: any StepProtocol) {
+        //
+    }
+    
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?) {
         setChildCoordinators(childCoordinators.filter({ $0.flow != childCoordinator.flow }))
         

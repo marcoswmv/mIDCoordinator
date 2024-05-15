@@ -10,16 +10,13 @@ import UIKit
 extension SignUpViewController {
     enum Action {
         case didCompleteSignUp
+        case navigateToRegisterPhone
     }
 }
 
 final class SignUpViewController: RootViewController {
 
     var performAction: ((SignUpViewController.Action) -> Void)?
-    
-    deinit {
-        print("\(self) deinit")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +28,6 @@ final class SignUpViewController: RootViewController {
     
     @IBAction 
     private func didPressSignUp(_ sender: Any) {
-        performAction?(.didCompleteSignUp)
+        performAction?(.navigateToRegisterPhone)
     }
 }

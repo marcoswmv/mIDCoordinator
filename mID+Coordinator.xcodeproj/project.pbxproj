@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B89248F2BF4B1E200808A12 /* RegisterPhoneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89248D2BF4B1E200808A12 /* RegisterPhoneCoordinator.swift */; };
+		8B8924902BF4B1E200808A12 /* RegisterPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89248E2BF4B1E200808A12 /* RegisterPhoneViewController.swift */; };
 		F735A3C22BBF7B17005DC664 /* StepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735A3C12BBF7B17005DC664 /* StepProtocol.swift */; };
 		F735A3C52BBF7C01005DC664 /* OnboardingStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735A3C42BBF7C01005DC664 /* OnboardingStep.swift */; };
 		F735A3C72BBF7C8D005DC664 /* WalletStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735A3C62BBF7C8D005DC664 /* WalletStep.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B89248D2BF4B1E200808A12 /* RegisterPhoneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhoneCoordinator.swift; sourceTree = "<group>"; };
+		8B89248E2BF4B1E200808A12 /* RegisterPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPhoneViewController.swift; sourceTree = "<group>"; };
 		F735A3C12BBF7B17005DC664 /* StepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepProtocol.swift; sourceTree = "<group>"; };
 		F735A3C42BBF7C01005DC664 /* OnboardingStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStep.swift; sourceTree = "<group>"; };
 		F735A3C62BBF7C8D005DC664 /* WalletStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStep.swift; sourceTree = "<group>"; };
@@ -119,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B0831CD2BF4AEB30040550B /* RegisterPhone */ = {
+			isa = PBXGroup;
+			children = (
+				8B89248D2BF4B1E200808A12 /* RegisterPhoneCoordinator.swift */,
+				8B89248E2BF4B1E200808A12 /* RegisterPhoneViewController.swift */,
+			);
+			path = RegisterPhone;
+			sourceTree = "<group>";
+		};
 		F735A3C32BBF7BEA005DC664 /* Steps */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				F73777332BC4065F001407C9 /* OnboardingCoordinator.swift */,
+				8B0831CD2BF4AEB30040550B /* RegisterPhone */,
 				F735A3C82BBF8227005DC664 /* SignUp */,
 			);
 			path = Onboarding;
@@ -504,6 +518,8 @@
 				F74F53C22BBD661A006E289D /* SceneDelegate.swift in Sources */,
 				F737774B2BC536DF001407C9 /* MoreMainCoordinator.swift in Sources */,
 				F73777342BC4065F001407C9 /* OnboardingCoordinator.swift in Sources */,
+				8B89248F2BF4B1E200808A12 /* RegisterPhoneCoordinator.swift in Sources */,
+				8B8924902BF4B1E200808A12 /* RegisterPhoneViewController.swift in Sources */,
 				F737772E2BC3EE3D001407C9 /* RootCoordinator.swift in Sources */,
 				F73777652BC6FD35001407C9 /* RootViewController.swift in Sources */,
 				F74F540A2BBEEAE5006E289D /* AppCoordinator.swift in Sources */,
@@ -660,14 +676,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q4L92P5BF3;
+				DEVELOPMENT_TEAM = F64MFXX9M4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "/Users/marcosvicente/Documents/Xcode/mID+Coordinator/mID+Coordinator/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = "/Users/mathiasnonohay/Projects/mID+Coordinator/mID+Coordinator/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -688,14 +705,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Q4L92P5BF3;
+				DEVELOPMENT_TEAM = F64MFXX9M4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "/Users/marcosvicente/Documents/Xcode/mID+Coordinator/mID+Coordinator/SupportingFiles/Info.plist";
+				INFOPLIST_FILE = "/Users/mathiasnonohay/Projects/mID+Coordinator/mID+Coordinator/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

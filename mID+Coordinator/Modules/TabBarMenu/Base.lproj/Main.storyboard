@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HZU-fq-i2c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HZU-fq-i2c">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -229,6 +230,44 @@
             </objects>
             <point key="canvasLocation" x="2286" y="-339"/>
         </scene>
+        <!--Register Phone View Controller-->
+        <scene sceneID="UWw-zX-fCW">
+            <objects>
+                <viewController storyboardIdentifier="RegisterPhoneViewController" id="ivY-3B-Bi4" customClass="RegisterPhoneViewController" customModule="mID_Coordinator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WCp-Yj-TEK">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQw-jV-ciL">
+                                <rect key="frame" x="154" y="332" width="87" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                <connections>
+                                    <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="IcQ-y9-DTn"/>
+                                    <action selector="didTouchRegister:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="iAL-uW-XWN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-l9-Mja">
+                                <rect key="frame" x="153" y="458" width="87" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Forward"/>
+                                <connections>
+                                    <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="G6T-gD-vT4"/>
+                                    <action selector="didTouchFoward:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="CYB-FF-TlT"/>
+                                    <action selector="didTouchRegister:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="XWG-wn-VSX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TXA-xq-Q0R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fKG-V3-jwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1156.4885496183206" y="309.85915492957747"/>
+        </scene>
         <!--Add Document View Controller-->
         <scene sceneID="XMt-lJ-ZPA">
             <objects>
@@ -245,6 +284,16 @@
                                     <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="aQz-Cb-uM7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkh-Kb-tfA">
+                                <rect key="frame" x="156" y="481" width="81" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Activity"/>
+                                <connections>
+                                    <action selector="didPressActivity:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="rpK-ao-iPE"/>
+                                    <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="E9V-Yk-bdB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JTl-iI-dLT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -256,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r74-Ka-5ds" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-474" y="323"/>
+            <point key="canvasLocation" x="-474" y="308"/>
         </scene>
     </scenes>
     <resources>

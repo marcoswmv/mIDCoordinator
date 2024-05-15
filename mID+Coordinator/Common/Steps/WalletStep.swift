@@ -12,5 +12,7 @@ enum WalletStep: StepProtocol {
     case completed
     case resetApp
     
+    case activity
+    
     var flow: CoordinatorFlow { .wallet }
 }

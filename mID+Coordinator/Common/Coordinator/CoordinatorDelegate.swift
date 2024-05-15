@@ -10,6 +10,8 @@ import UIKit
 /// Routing handled by the parent Coordinator
 protocol CoordinatorRoutingDelegate: AnyObject {
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?)
+    func pushCoordinator(next step: StepProtocol)
+    func popCoordinator(_ childCoordinator: RootCoordinator)
 }
 
 // MARK: - UINavigationController ouput

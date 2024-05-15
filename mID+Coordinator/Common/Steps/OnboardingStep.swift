@@ -10,6 +10,7 @@ import Foundation
 enum OnboardingStep: StepProtocol {
     case signUp
     case completed
+    case registerPhone
     
     var flow: CoordinatorFlow { .onboarding }
 }
