@@ -22,6 +22,7 @@ final class OnboardingCoordinator: RootCoordinator {
     
     override func start() {
         navigationController.delegate = self
+        setupRootCoordinatorControllerDelegates(navigationBarDelegate: self)
         configureCoordinator(for: OnboardingStep.signUp)
     }
     
@@ -39,7 +40,6 @@ final class OnboardingCoordinator: RootCoordinator {
         
         if let coordinator {
             coordinator.routingDelegate = self
-            setupControllerDelegates(navigationBarDelegate: self)
             addChildCoordinator(coordinator)
             coordinator.start()
         }

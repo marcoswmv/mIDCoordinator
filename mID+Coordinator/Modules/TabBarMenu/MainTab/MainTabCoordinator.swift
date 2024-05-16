@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MainTabCoordinatorDelegate: AnyObject {
+    func selectTab(_ tab: MainTabPage)
+}
+
 final class MainTabCoordinator: RootCoordinator {
     
     override var flow: CoordinatorFlow { .mainTab }
@@ -33,9 +37,7 @@ final class MainTabCoordinator: RootCoordinator {
     private func setNavigationControllerForTabBarItem(for page: MainTabPage) -> UINavigationController {
         let navigationController = UINavigationController()
 //        navigationController.setNavigationBarHidden(false, animated: false)
-        navigationController.tabBarItem = UITabBarItem(title: page.title,
-                                                       image: nil,
-                                                       tag: page.rawValue)
+        navigationController.tabBarItem = UITabBarItem(title: page.title, image: nil, tag: page.rawValue)
         configureCoordinator(for: page, with: navigationController)
         
         return navigationController
@@ -58,15 +60,15 @@ final class MainTabCoordinator: RootCoordinator {
         }
         
         if let coordinator {
-            setupControllerDelegates(tabBarDelegate: self)
             coordinator.routingDelegate = self
+            coordinator.tabCoordinatorDelegate = self
             addChildCoordinator(coordinator)
             coordinator.start()
         }
     }
     
     private func prepareTabBarController(with controllers: [UIViewController]) {
-        tabBarController.delegate = self
+//        tabBarController.delegate = self
         tabBarController.setViewControllers(controllers, animated: true)
         tabBarController.selectedIndex = MainTabPage.wallet.rawValue
         tabBarController.tabBar.isTranslucent = false
@@ -82,28 +84,25 @@ final class MainTabCoordinator: RootCoordinator {
     
     func currentPage() -> MainTabPage? { MainTabPage(index: tabBarController.selectedIndex) }
     
-    func selectTab(_ page: MainTabPage) {
-        tabBarController.selectedIndex = page.rawValue
-    }
-    
     func selectTab(at index: Int) {
         guard let page = MainTabPage(index: index) else { return }
         tabBarController.selectedIndex = page.rawValue
     }
 }
 
+extension MainTabCoordinator: MainTabCoordinatorDelegate {
+    func selectTab(_ page: MainTabPage) {
+        tabBarController.selectedIndex = page.rawValue
+    }
+}
+
 extension MainTabCoordinator: CoordinatorRoutingDelegate {
     func popCoordinator(_ childCoordinator: RootCoordinator) {
-        //
+        debugPrint("\(self) \(#function)")
     }
     
     func pushCoordinator(next step: any StepProtocol) {
-        guard let step = step as? WalletStep,
-              let destinationTab = MainTabPage(flow: step.flow) else {
-            return
-        }
-       
-        selectTab(.activity)
+        debugPrint("\(self) \(#function)")
     }
     
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?) {
@@ -114,15 +113,5 @@ extension MainTabCoordinator: CoordinatorRoutingDelegate {
         }
         
         routingDelegate?.childCoordinatorDidFinish(self, with: step)
-    }
-}
-
-extension MainTabCoordinator: CoordinatorTabBarDelegate {
-    func navigateTo(next tab: MainTabPage) {
-        selectTab(tab)
-    }
-    
-    func didSelectViewController(on tabBarController: UITabBarController, viewController: UIViewController) {
-        print("\(self).\(#function)")
     }
 }

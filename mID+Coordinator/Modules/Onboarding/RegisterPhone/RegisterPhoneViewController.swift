@@ -20,15 +20,15 @@ final class RegisterPhoneViewController: RootViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(self)"
+        title = "Register Phone"
     }
     
-    @IBAction func didTouchRegister(_ sender: Any) {
+    @IBAction func didPressGoBack(_ sender: Any) {
         print("Register did begin")
         performAction?(.goBack)
     }
     
-    @IBAction func didTouchFoward(_ sender: Any) {
+    @IBAction func didPressGoForward(_ sender: Any) {
         performAction?(.goForward)
     }
 }

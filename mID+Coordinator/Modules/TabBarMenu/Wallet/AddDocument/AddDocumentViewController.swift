@@ -31,7 +31,7 @@ final class AddDocumentViewController: RootViewController {
         performAction?(.finish)
     }
     
-    @IBAction func didPressActivity(_ sender: Any) {
+    @IBAction func didPressGoToActivity(_ sender: Any) {
         performAction?(.activity)
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HZU-fq-i2c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HZU-fq-i2c">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -239,24 +239,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQw-jV-ciL">
-                                <rect key="frame" x="154" y="332" width="87" height="35"/>
+                                <rect key="frame" x="154" y="332" width="88" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go Back"/>
                                 <connections>
-                                    <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="IcQ-y9-DTn"/>
-                                    <action selector="didTouchRegister:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="iAL-uW-XWN"/>
+                                    <action selector="didPressGoBack:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="iAL-uW-XWN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpE-l9-Mja">
-                                <rect key="frame" x="153" y="458" width="87" height="35"/>
+                                <rect key="frame" x="140" y="458" width="113" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Forward"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go Forward"/>
                                 <connections>
-                                    <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="G6T-gD-vT4"/>
-                                    <action selector="didTouchFoward:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="CYB-FF-TlT"/>
-                                    <action selector="didTouchRegister:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="XWG-wn-VSX"/>
+                                    <action selector="didPressGoForward:" destination="ivY-3B-Bi4" eventType="touchUpInside" id="CYB-FF-TlT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -285,13 +282,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkh-Kb-tfA">
-                                <rect key="frame" x="156" y="481" width="81" height="35"/>
+                                <rect key="frame" x="133" y="481" width="127" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Activity"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Go to Activity"/>
                                 <connections>
-                                    <action selector="didPressActivity:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="rpK-ao-iPE"/>
-                                    <action selector="didPressFinish:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="E9V-Yk-bdB"/>
+                                    <action selector="didPressGoToActivity:" destination="8bF-GJ-Gpq" eventType="touchUpInside" id="rpK-ao-iPE"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -10,8 +10,8 @@ import UIKit
 /// Routing handled by the parent Coordinator
 protocol CoordinatorRoutingDelegate: AnyObject {
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?)
-    func pushCoordinator(next step: StepProtocol)
     func popCoordinator(_ childCoordinator: RootCoordinator)
+    func pushCoordinator(next step: StepProtocol)
 }
 
 // MARK: - UINavigationController ouput
@@ -22,6 +22,5 @@ protocol CoordinatorNavigationBarDelegate: AnyObject {
 
 // MARK: - TabBarController output and TabBarCoordinator routing
 protocol CoordinatorTabBarDelegate: AnyObject {
-    func navigateTo(next tab: MainTabPage)
     func didSelectViewController(on tabBarController: UITabBarController, viewController: UIViewController)
 }

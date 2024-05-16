@@ -25,7 +25,7 @@ final class WalletMainCoordinator: RootCoordinator {
                 configureCoordinator(for: .addDocument)
             }
         }
-        setupControllerDelegates(navigationBarDelegate: self)
+        setupRootCoordinatorControllerDelegates(navigationBarDelegate: self)
         navigationController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -36,17 +36,18 @@ final class WalletMainCoordinator: RootCoordinator {
         switch step {
         case .addDocument:
             coordinator = AddDocumentCoordinator(navigationController)
+        case .activity:
+            break
         case .completed:
             start()
         case .resetApp:
-            // Deallocating every coordinator (and viewControllers) up to AppCoordinator and from it show Splash
+            // Deallocating every coordinator (and viewControllers) up to AppCoordinator and from the latter show Splash
             routingDelegate?.childCoordinatorDidFinish(self, with: nil)
-        case .activity:
-            break;
         }
         
         if let coordinator {
             coordinator.routingDelegate = self
+            coordinator.tabCoordinatorDelegate = tabCoordinatorDelegate
             addChildCoordinator(coordinator)
             coordinator.start()
         }
@@ -55,11 +56,11 @@ final class WalletMainCoordinator: RootCoordinator {
 
 extension WalletMainCoordinator: CoordinatorRoutingDelegate {
     func popCoordinator(_ childCoordinator: RootCoordinator) {
-        //
+        debugPrint("\(self) \(#function)")
     }
     
     func pushCoordinator(next step: any StepProtocol) {
-        //
+        debugPrint("\(self) \(#function)")
     }
     
     func childCoordinatorDidFinish(_ childCoordinator: RootCoordinator, with step: StepProtocol?) {
