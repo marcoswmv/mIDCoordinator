@@ -2,7 +2,7 @@
 //  CoordinatorDelegate.swift
 //  mID+Coordinator
 //
-//  Created by Marcos Vicente on 08/04/2024.
+//  Created by Marcos Vicente on 08/04/2024. //gitignoreline
 //
 
 import UIKit
