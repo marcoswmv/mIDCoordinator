@@ -1,0 +1,1 @@
+An implementation of the Coordinator pattern to an app that uses TabBarController for it's menu and has it's flow controlled by the backend through actions received by it and executing the navigation accordingly.
