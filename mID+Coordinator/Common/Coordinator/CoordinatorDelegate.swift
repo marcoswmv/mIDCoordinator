@@ -23,4 +23,5 @@ protocol CoordinatorNavigationBarDelegate: AnyObject {
 // MARK: - TabBarController output and TabBarCoordinator routing
 protocol CoordinatorTabBarDelegate: AnyObject {
     func didSelectViewController(on tabBarController: UITabBarController, viewController: UIViewController)
+    func shouldSelectViewController(on tabBarController: UITabBarController, viewController: UIViewController)
 }

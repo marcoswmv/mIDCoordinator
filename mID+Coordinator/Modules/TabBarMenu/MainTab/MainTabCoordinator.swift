@@ -13,7 +13,7 @@ protocol MainTabCoordinatorDelegate: AnyObject {
 
 final class MainTabCoordinator: RootCoordinator {
     
-    override var flow: CoordinatorFlow { .mainTab }
+    override var flow: CoordinatorFlow { .menu }
     var tabBarController: UITabBarController
     
     convenience init(_ navigationController: UINavigationController, step: StepProtocol?) {
@@ -32,6 +32,7 @@ final class MainTabCoordinator: RootCoordinator {
         let navigationControllers: [UINavigationController] = pages
             .map({ setNavigationControllerForTabBarItem(for: $0) })
         prepareTabBarController(with: navigationControllers)
+        setupRootCoordinatorControllerDelegates(tabBarDelegate: self)
     }
     
     private func setNavigationControllerForTabBarItem(for page: MainTabPage) -> UINavigationController {
@@ -68,7 +69,7 @@ final class MainTabCoordinator: RootCoordinator {
     }
     
     private func prepareTabBarController(with controllers: [UIViewController]) {
-//        tabBarController.delegate = self
+        tabBarController.delegate = self
         tabBarController.setViewControllers(controllers, animated: true)
         tabBarController.selectedIndex = MainTabPage.wallet.rawValue
         tabBarController.tabBar.isTranslucent = false
@@ -86,12 +87,18 @@ final class MainTabCoordinator: RootCoordinator {
     
     func selectTab(at index: Int) {
         guard let page = MainTabPage(index: index) else { return }
-        tabBarController.selectedIndex = page.rawValue
+        selectTab(page)
+    }
+    
+    private func cleanViewControllersStackInSelectedTab() {
+        guard let currentNavigationController = tabBarController.selectedViewController as? UINavigationController else { return }
+        currentNavigationController.popToRootViewController(animated: false)
     }
 }
 
 extension MainTabCoordinator: MainTabCoordinatorDelegate {
     func selectTab(_ page: MainTabPage) {
+        cleanViewControllersStackInSelectedTab()
         tabBarController.selectedIndex = page.rawValue
     }
 }
@@ -114,4 +121,12 @@ extension MainTabCoordinator: CoordinatorRoutingDelegate {
         
         routingDelegate?.childCoordinatorDidFinish(self, with: step)
     }
+}
+
+extension MainTabCoordinator: CoordinatorTabBarDelegate {
+    func shouldSelectViewController(on tabBarController: UITabBarController, viewController: UIViewController) {
+        cleanViewControllersStackInSelectedTab()
+    }
+    
+    func didSelectViewController(on tabBarController: UITabBarController, viewController: UIViewController) { }
 }

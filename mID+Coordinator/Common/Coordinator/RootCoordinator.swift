@@ -94,6 +94,9 @@ extension RootCoordinator: UINavigationControllerDelegate {
 
 // MARK: - UITabBarControllerDelegate
 extension RootCoordinator: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        ((tabBarDelegate?.shouldSelectViewController(on: tabBarController, viewController: viewController)) != nil)
+    }
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         tabBarDelegate?.didSelectViewController(on: tabBarController, viewController: viewController)
     }

@@ -32,7 +32,7 @@ final class AppCoordinator: RootCoordinator {
             if let onboardingStep = step as? OnboardingStep {
                 coordinator = OnboardingCoordinator(navigationController, step: onboardingStep)
             }
-        case .mainTab:
+        case .menu:
             coordinator = MainTabCoordinator(navigationController, step: step)
         case .wallet,
                 .signature,
@@ -54,7 +54,7 @@ final class AppCoordinator: RootCoordinator {
         case is OnboardingStep:
             return .onboarding
         case is WalletStep:
-            return .mainTab
+            return .menu
         default:
             return .app
         }
@@ -79,11 +79,11 @@ extension AppCoordinator: CoordinatorRoutingDelegate {
         }
         
         switch childCoordinator.flow {
-        case .mainTab:
+        case .menu:
             configureCoordinator(for: .app)
             
         case .onboarding:
-            configureCoordinator(for: .mainTab)
+            configureCoordinator(for: .menu)
             
         case .app:
             let destinationFlow: CoordinatorFlow = getCoordinatorFlow(by: step)

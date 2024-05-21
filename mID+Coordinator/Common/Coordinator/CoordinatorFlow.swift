@@ -15,7 +15,7 @@ enum CoordinatorFlow {
     /// - Tabs
     /// - App: only responsible for showing splash
     case app // Splash
-    case mainTab
+    case menu
     case onboarding
     
 //    MARK: - (Only) Child Coordinators

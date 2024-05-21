@@ -67,7 +67,7 @@ extension WalletMainCoordinator: CoordinatorRoutingDelegate {
         setChildCoordinators(childCoordinators.filter({ $0.flow != childCoordinator.flow }))
         
         if !navigationController.viewControllers.isEmpty {
-            navigationController.viewControllers.removeAll()
+            navigationController.setViewControllers([], animated: false)
         }
         
         if let walletStep = step as? WalletStep {
